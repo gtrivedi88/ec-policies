@@ -1,1 +1,2 @@
-* xref:newpage.adoc[]
+* xref:index.adoc[The main file]
+* xref:newpage.adoc[The new page]
