@@ -1,0 +1,6 @@
+name: ec-policies
+title: Enterprise Contract Policies
+version: master
+nav:
+- modules/ROOT/index.adoc
+- modules/ROOT/newpage.adoc
