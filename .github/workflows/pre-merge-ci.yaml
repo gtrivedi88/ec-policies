@@ -1,0 +1,29 @@
+---
+name: pre-merge-ci
+
+on:
+  pull_request:
+    branches:
+    - main
+
+  push:
+    branches:
+    - main
+
+  workflow_dispatch:
+
+jobs:
+  all-tests-and-checks:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install opa
+      run: make install-opa OPA_BIN=$HOME/.local/bin
+
+    - name: Install gomplate
+      run: make install-gomplate GOMPLATE_BIN=$HOME/.local/bin
+
+    - name: Run checks
+      run: make ci
